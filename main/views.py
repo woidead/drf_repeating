@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework import generics
+from .models import Celebrity, Category
 
-# Create your views here.
+
+class CelebrityAPIView(generics.ListAPIView):
+    queryset = Celebrity.objects.all()
+    serializer_class = CelebritySerilizer
+    
